@@ -1,0 +1,5 @@
+
+logging:
+  log_folder: \logs
+  log_file: crypto_patterns_ml.log
+  log_level: DEBUG
