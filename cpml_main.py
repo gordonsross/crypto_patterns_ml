@@ -3,7 +3,6 @@
 import datetime as dt
 import json
 import logging
-import matplotlib.pyplot as pd
 import numpy as np
 import os
 import yaml

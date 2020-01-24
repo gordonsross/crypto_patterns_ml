@@ -20,12 +20,12 @@ def get_asset_info(assets):
     asset_info = cm.get_asset_info(assets)
     return coinmetrics.cm_to_pandas(asset_info)
 
-def get_asset_prices(assets, ccy_pair, start_date, end_date):
+def get_asset_prices(assets, cm_metric, start_date, end_date):
     
     results_df = None
 
     for asset in assets:
-        asset_prices = cm.get_asset_data_for_time_range(asset, ccy_pair, start_date, end_date)        
+        asset_prices = cm.get_asset_data_for_time_range(asset, cm_metric, start_date, end_date)        
         if isinstance(results_df, pd.DataFrame):
             tmp_df = coinmetrics.cm_to_pandas(asset_prices).rename(columns={'PriceUSD': asset})            
             results_df = pd.concat([tmp_df, results_df], axis=1, sort=True)                 
